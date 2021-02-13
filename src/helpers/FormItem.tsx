@@ -4,6 +4,7 @@ interface FormItemProps {
     label?: string;
     type?: string;
     name?: string;
+    placeholder?: string;
     value?: string;
     onChange?: () => void;
     otherProps?: Object;
@@ -13,13 +14,13 @@ const FormItem: React.FC<FormItemProps> = ({ label, children, type = "text", ...
     <div>
         {type === "text" ? (
             <>
-                <label>{label}</label>
-                <input type={type} {...otherProps} />
+                <label>{label?.toLocaleUpperCase()}</label>
+                <input type={type} placeholder={`Please enter your ${label} `} {...otherProps} />
             </>
         ) : (
                 <>
                     <label />
-                    <input type={type} {...otherProps} />
+                    <input type={type} placeholder={`Please enter your ${label} `} {...otherProps} />
                     {label}
                 </>
             )}

@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+import FormItem from '../helpers/FormItem';
+
 
 interface EmailStepProps {
     cb: (field: string, value: string) => void,
 }
 
-const EmailStep: React.FC<EmailStepProps> = (props) => {
-    const [email, setEmail] = useState('');
+const EmailStep: React.FC<any> = ({ setForm, formData, navigation }) => {
+    const { email } = formData;
+    const { previous, next } = navigation;
+
     return <>
-        <div>Email: <input type='email' onChange={({target: {value}}) => {setEmail(value)}} value={email}></input></div>
-        <button onClick={() => props.cb('email', email)}>Next</button>
-    </>;
+        <div className="form">
+            <h3>Email</h3>
+            <FormItem label="email" name="email" value={email} onChange={setForm} />
+            <div>
+                <button onClick={previous}>Previous</button>
+                <button onClick={next}>Next</button>
+            </div>
+        </div>
+    </>;    
 };
 
 export default EmailStep;
