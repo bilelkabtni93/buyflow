@@ -15,12 +15,16 @@ const FormItem: React.FC<FormItemProps> = ({ label, children, type = "text", ...
         {type === "text" ? (
             <>
                 <label>{label?.toLocaleUpperCase()}</label>
-                <input type={type} placeholder={`Please enter your ${label} `} {...otherProps} />
+                <input type={type}
+                    autoComplete="off"
+                    placeholder={`Please enter your ${label} `} {...otherProps} />
             </>
         ) : (
                 <>
                     <label />
-                    <input type={type} placeholder={`Please enter your ${label} `} {...otherProps} />
+                    <input type={type}
+                        autoComplete="off"
+                        placeholder={`Please enter your ${label} `} {...otherProps} />
                     {label}
                 </>
             )}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormItem from '../helpers/FormItem';
-import {UseStepResponse, NavigationProps } from "react-hooks-helper";
+import { validate } from '../helpers/Validate';
 
 /* todo remove any */
 
@@ -14,11 +14,11 @@ const AgeStep: React.FC<any> = ({ setForm, formData, navigation }) => {
             <h3>Age</h3>
             <FormItem type="number" label="Age" name="age" value={age} onChange={setForm} />
             <div>
-                <button onClick={previous}>Previous</button>
-                <button onClick={next}>Next</button>
+                <button type="button" onClick={previous}>Previous</button>
+                <button type="button" disabled={validate({ age })} onClick={next}>Next</button>
             </div>
         </div>
-    </>;    
+    </>;
 };
 
 export default AgeStep;

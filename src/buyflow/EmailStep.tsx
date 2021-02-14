@@ -1,5 +1,6 @@
 import React from 'react';
 import FormItem from '../helpers/FormItem';
+import { validate } from '../helpers/Validate';
 
 
 interface EmailStepProps {
@@ -16,10 +17,12 @@ const EmailStep: React.FC<any> = ({ setForm, formData, navigation }) => {
             <FormItem label="email" name="email" value={email} onChange={setForm} />
             <div>
                 <button onClick={previous}>Previous</button>
-                <button onClick={next}>Next</button>
+                <button
+                    disabled={validate({ email })}
+                    onClick={next}>Next</button>
             </div>
         </div>
-    </>;    
+    </>;
 };
 
 export default EmailStep;
