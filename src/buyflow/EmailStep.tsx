@@ -1,13 +1,17 @@
 import React from 'react';
 import FormItem from '../helpers/FormItem';
-import { validate } from '../helpers/Validate';
+import { validate, isValidEmail } from '../helpers/Validate';
+import {BuyflowData} from "../interfaces/buyflow.interface";
+import { NavigationProps} from "react-hooks-helper";
 
 
 interface EmailStepProps {
-    cb: (field: string, value: string) => void,
+    setForm: any;
+    formData: BuyflowData;
+    navigation: NavigationProps;
 }
 
-const EmailStep: React.FC<any> = ({ setForm, formData, navigation }) => {
+const EmailStep: React.FC<EmailStepProps> = ({ setForm, formData, navigation }) => {
     const { email } = formData;
     const { previous, next } = navigation;
 
@@ -18,7 +22,7 @@ const EmailStep: React.FC<any> = ({ setForm, formData, navigation }) => {
             <div>
                 <button onClick={previous}>Previous</button>
                 <button
-                    disabled={validate({ email })}
+                    disabled={validate({ email }) || !isValidEmail(email)}
                     onClick={next}>Next</button>
             </div>
         </div>

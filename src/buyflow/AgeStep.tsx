@@ -3,16 +3,23 @@ import React from 'react';
 import FormItem from '../helpers/FormItem';
 import { validate } from '../helpers/Validate';
 
-/* todo remove any */
+import { BuyflowData } from "../interfaces/buyflow.interface";
+import { NavigationProps } from "react-hooks-helper";
 
-const AgeStep: React.FC<any> = ({ setForm, formData, navigation }) => {
+interface AgeStepProps {
+    setForm: any;   
+    formData: BuyflowData;
+    navigation: NavigationProps;
+}
+
+const AgeStep: React.FC<AgeStepProps> = ({ setForm, formData, navigation }) => {
     const { age } = formData;
     const { previous, next } = navigation;
 
     return <>
         <div className="form">
             <h3>Age</h3>
-            <FormItem type="number" label="Age" name="age" value={age} onChange={setForm} />
+            <FormItem type="number" label="Age" name="age" value={age?.toString()} onChange={setForm} />
             <div>
                 <button type="button" onClick={previous}>Previous</button>
                 <button type="button" disabled={validate({ age })} onClick={next}>Next</button>

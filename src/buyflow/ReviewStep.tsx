@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-
 const Review: React.FC<any> = ({ setForm, formData, navigation }) => {
     const {
         lastName,
@@ -20,7 +19,7 @@ const Review: React.FC<any> = ({ setForm, formData, navigation }) => {
         <button onClick={() => go("fullName")}>Edit</button>
             </h4>
             <div>
-            firstName: {`${firstName}`}        <br />
+                firstName: {`${firstName}`}        <br />
             lastName: {`${lastName}`}
             </div>
             <h4>
@@ -29,15 +28,15 @@ const Review: React.FC<any> = ({ setForm, formData, navigation }) => {
             </h4>
             <div>
                 Age: {`${age}`}
-        <br />
+                <br />
             </div>
             <h4>
                 Email
         <button onClick={() => go("email")}>Edit</button>
             </h4>
             <div>
-            Email: {`${email}`}
-        <br />
+                Email: {`${email}`}
+                <br />
             </div>
             <div>
                 <div>

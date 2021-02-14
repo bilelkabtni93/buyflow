@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import FormItem from '../helpers/FormItem';
 import { validate } from '../helpers/Validate';
+import {BuyflowData} from "../interfaces/buyflow.interface";
+import { NavigationProps} from "react-hooks-helper";
 
-const FullName: React.FC<any> = ({ setForm, formData, navigation }) => {
+interface FullNameStepProps {
+    setForm: any,
+    formData: BuyflowData,
+    navigation: NavigationProps,
+}
+
+const FullName: React.FC<FullNameStepProps> = ({ setForm, formData, navigation }) => {
     const { lastName, firstName } = formData;
-
-    console.log("aaaaaa", validate({ lastName, firstName }))
-
     const { next } = navigation;
 
     return <>

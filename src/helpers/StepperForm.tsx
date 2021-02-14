@@ -6,17 +6,14 @@ import EmailStep from "../buyflow/EmailStep";
 import FullNameStep from "../buyflow/FullNameStep";
 import ReviewStep from "../buyflow/ReviewStep";
 
-const defaultData = {
+import {BuyflowData} from "../interfaces/buyflow.interface";
+
+const defaultData: BuyflowData = {
     firstName: "",
     lastName: "",
     age: 0,
     email: "",
 };
-
-
-interface Step {
-    id: string;
-}
 
 interface useStepType {
     step?: any,
