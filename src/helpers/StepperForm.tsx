@@ -4,7 +4,7 @@ import { useForm, useStep, NavigationProps } from "react-hooks-helper";
 import AgeStep from "../buyflow/AgeStep";
 import EmailStep from "../buyflow/EmailStep";
 import FullNameStep from "../buyflow/FullNameStep";
-import ReviewStep from "../buyflow/ReviewStep";
+import SummaryStep from "../buyflow/SummaryStep";
 
 import {BuyflowData} from "../interfaces/buyflow.interface";
 
@@ -24,7 +24,7 @@ const steps: any[] = [
     { id: "fullName" },
     { id: "age" },
     { id: "email" },
-    { id: "review" },
+    { id: "summary" },
 ];
 
 const SteperForm: React.FC<useStepType> = () => {
@@ -42,8 +42,8 @@ const SteperForm: React.FC<useStepType> = () => {
             return <AgeStep {...props} />;
         case "email":
             return <EmailStep {...props} />;
-        case "review":
-            return <ReviewStep {...props} />;
+        case "summary":
+            return <SummaryStep {...props} />;
         default:
             return null;
     }

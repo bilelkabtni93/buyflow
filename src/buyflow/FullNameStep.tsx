@@ -4,6 +4,8 @@ import { validate } from '../helpers/Validate';
 import {BuyflowData} from "../interfaces/buyflow.interface";
 import { NavigationProps} from "react-hooks-helper";
 
+import { Wrapper } from '../styles/Form.styles';
+
 interface FullNameStepProps {
     setForm: any,
     formData: BuyflowData,
@@ -15,8 +17,7 @@ const FullName: React.FC<FullNameStepProps> = ({ setForm, formData, navigation }
     const { next } = navigation;
 
     return <>
-        <div>
-            <h3>Name</h3>
+        <Wrapper>
             <FormItem label="First name" name="firstName" value={firstName} onChange={setForm} />
             <FormItem label="Last name" name="lastName" value={lastName} onChange={setForm} />
             <div>
@@ -25,7 +26,7 @@ const FullName: React.FC<FullNameStepProps> = ({ setForm, formData, navigation }
                     disabled={validate({ lastName, firstName })}
                     onClick={next}>Next</button>
             </div>
-        </div>
+        </Wrapper>
     </>;
 };
 

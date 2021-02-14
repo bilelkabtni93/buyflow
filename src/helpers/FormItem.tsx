@@ -12,22 +12,12 @@ interface FormItemProps {
 
 const FormItem: React.FC<FormItemProps> = ({ label, children, type = "text", ...otherProps }) => (
     <div>
-        {type === "text" ? (
-            <>
-                <label>{label?.toLocaleUpperCase()}</label>
-                <input type={type}
-                    autoComplete="off"
-                    placeholder={`Please enter your ${label} `} {...otherProps} />
-            </>
-        ) : (
-                <>
-                    <label />
-                    <input type={type}
-                        autoComplete="off"
-                        placeholder={`Please enter your ${label} `} {...otherProps} />
-                    {label}
-                </>
-            )}
+        <>
+            <label>{label}</label>
+            <input type={type}
+                autoComplete="off"
+                placeholder={`Please enter your ${label} `} {...otherProps} />
+        </>
     </div>
 );
 
