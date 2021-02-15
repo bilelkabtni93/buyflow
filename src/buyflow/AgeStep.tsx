@@ -1,14 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import FormItem from '../helpers/FormItem';
+import { validate } from '../helpers/Validator';
+
+import { BuyflowData } from "../interfaces/buyflow.interface";
+import { NavigationProps } from "react-hooks-helper";
+
+import { Wrapper } from '../styles/Form.styles';
 
 interface AgeStepProps {
-    cb: (field: string, value: number) => void,
+    setForm: any;
+    formData: BuyflowData;
+    navigation: NavigationProps;
 }
 
-const AgeStep: React.FC<AgeStepProps> = (props) => {
-    const [age, setAge] = useState(0);
+const AgeStep: React.FC<AgeStepProps> = ({ setForm, formData, navigation }) => {
+    const { age } = formData;
+    const { previous, next } = navigation;
+
     return <>
-        <div>Age: <input type='number' onChange={({target: {value}}) => {setAge(Number(value))}} value={age}></input></div>
-        <button onClick={() => props.cb('age', age)}>Next</button>
+        <Wrapper>
+            <FormItem type="number" label="Age" name="age" value={age?.toString()} onChange={setForm} />
+            <div>
+                <button type="button" onClick={previous}>Previous</button>
+                <button type="button" disabled={validate({ age })} onClick={next}>Next</button>
+            </div>
+        </Wrapper>
     </>;
 };
 
