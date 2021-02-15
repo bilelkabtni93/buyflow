@@ -6,12 +6,12 @@ import EmailStep from "../buyflow/EmailStep";
 import FullNameStep from "../buyflow/FullNameStep";
 import SummaryStep from "../buyflow/SummaryStep";
 
-import {BuyflowData} from "../interfaces/buyflow.interface";
+import { BuyflowData } from "../interfaces/buyflow.interface";
 
 const defaultData: BuyflowData = {
     firstName: "",
     lastName: "",
-    age: 0,
+    age: 1,
     email: "",
 };
 

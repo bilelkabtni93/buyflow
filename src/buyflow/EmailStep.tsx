@@ -1,6 +1,6 @@
 import React from 'react';
 import FormItem from '../helpers/FormItem';
-import { validate, isValidEmail } from '../helpers/Validate';
+import { validate, isValidEmail } from '../helpers/Validator';
 import { BuyflowData } from "../interfaces/buyflow.interface";
 import { NavigationProps } from "react-hooks-helper";
 import { Wrapper } from '../styles/Form.styles';

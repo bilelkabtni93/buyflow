@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    max-width: 50%;
+    max-width: 30%;
     margin: 10px auto;
 
     label {
@@ -38,7 +38,6 @@ export const Wrapper = styled.div`
 
     p {
         padding: 10px;
-        font-weight: bold;
         border: 1px solid black;
     }
 

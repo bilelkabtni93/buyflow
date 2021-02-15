@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormItem from '../helpers/FormItem';
-import { validate } from '../helpers/Validate';
+import { validate } from '../helpers/Validator';
 
 import { BuyflowData } from "../interfaces/buyflow.interface";
 import { NavigationProps } from "react-hooks-helper";

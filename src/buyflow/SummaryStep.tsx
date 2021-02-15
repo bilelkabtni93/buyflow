@@ -16,18 +16,18 @@ const SummaryStep: React.FC<any> = ({ setForm, formData, navigation }) => {
         <Wrapper>
             <h4>Review your data</h4>
             <p>
-                First Name: {`${firstName}`}<br />
-                Last Name: {`${lastName}`}<br />
+                <b>First Name:</b> {`${firstName}`}<br />
+                <b>Last Name:</b> {`${lastName}`}<br />
                 <button onClick={() => go("fullName")}>Edit</button>
             </p>
 
             <p>
-                Age: {`${age}`}<br />
+                <b>Age:</b> {`${age}`} years<br />
                 <button onClick={() => go("age")}>Edit</button>
             </p>
 
             <p>
-                Email: {`${email}`}<br />
+                <b>Email:</b> {`${email}`}<br />
                 <button onClick={() => go("email")}>Edit</button>
             </p>
             <br />
